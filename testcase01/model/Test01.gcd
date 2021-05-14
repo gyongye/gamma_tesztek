@@ -1,0 +1,19 @@
+package test01
+import "/testcase01/model/Interfaces.gcd"
+@TransitionPriority = order-based
+statechart Test01 [
+	port Command : requires Command
+] {
+	var end : boolean
+	transition from Entry0 to StateA
+	transition from StateA to StateB when Command.S1 [not end]
+	transition from StateB to FinalState1 when Command.S2 [not end]
+	region main_region {
+		initial Entry0
+		state StateB
+		state StateA
+		state FinalState1 {
+			entry / end := true;
+		}
+	}
+}

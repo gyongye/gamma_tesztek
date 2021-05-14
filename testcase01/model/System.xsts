@@ -1,0 +1,47 @@
+type Main_region_Test01 : { __Inactive__, StateB, StateA, FinalState1}
+var Command_S2_In_test : boolean = false
+var Command_S1_In_test : boolean = false
+ctrl var main_region_test : Main_region_Test01 = __Inactive__
+var end_test : boolean = false
+
+trans {
+	choice {
+		assume (((main_region_test == StateB) && ((Command_S2_In_test == true) && (!(end_test)))));
+		main_region_test := FinalState1;
+		end_test := true;
+	} or {
+		assume (((main_region_test == StateA) && ((Command_S1_In_test == true) && (!(end_test)))));
+		main_region_test := StateB;
+	} or {
+		assume (!(((((main_region_test == StateB) && ((Command_S2_In_test == true) && (!(end_test))))) || (((main_region_test == StateA) && ((Command_S1_In_test == true) && (!(end_test))))))));
+	}
+	Command_S2_In_test := false;
+	Command_S1_In_test := false;
+}
+init {
+	end_test := false;
+	main_region_test := __Inactive__;
+	Command_S2_In_test := false;
+	Command_S1_In_test := false;
+	main_region_test := StateA;
+	choice {
+		assume (main_region_test == StateB);
+	} or {
+		assume (main_region_test == StateA);
+	} or {
+		assume (main_region_test == FinalState1);
+		end_test := true;
+	}
+}
+env {
+	choice {
+		Command_S2_In_test := true;
+	} or {
+		Command_S2_In_test := false;
+	}
+	choice {
+		Command_S1_In_test := true;
+	} or {
+		Command_S1_In_test := false;
+	}
+}

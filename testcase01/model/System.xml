@@ -1,0 +1,227 @@
+<nta>
+<declaration>
+
+
+bool isStable = false;
+
+bool endOftest;
+
+bool toRaise_Command_S2Oftest;
+
+bool isRaised_Command_S2Oftest;
+
+bool toRaise_Command_S1Oftest;
+
+bool isRaised_Command_S1Oftest;
+
+broadcast chan runCycleMain_regionOfStatechartOftest;
+
+bool isScheduledmain_regionOfStatechartOftestOftest;
+
+void clearOutEvents4() {
+}
+
+void resetClocks5() {
+}
+
+</declaration>
+<template>
+<name>
+main_regionOfStatechartOftest
+</name>
+<location id="Entry0">
+<name>
+Entry0
+</name>
+<committed/>
+</location>
+
+<location id="FinalState1">
+<name>
+FinalState1
+</name>
+</location>
+
+<location id="entryOfFinalState1">
+<name>
+entryOfFinalState1
+</name>
+<committed/>
+</location>
+
+<location id="StateB">
+<name>
+StateB
+</name>
+</location>
+
+<location id="StateA">
+<name>
+StateA
+</name>
+</location>
+<init ref="Entry0"/>
+
+<transition>
+<source ref="entryOfFinalState1"/>
+<target ref="FinalState1"/>
+<label kind="assignment">endOftest = true</label>
+</transition>
+
+<transition>
+<source ref="Entry0"/>
+<target ref="StateA"/>
+<label kind="assignment">isScheduledmain_regionOfStatechartOftestOftest = true</label>
+</transition>
+
+<transition>
+<source ref="StateB"/>
+<target ref="entryOfFinalState1"/>
+<label kind="guard">(!(endOftest) &amp;&amp; isRaised_Command_S2Oftest)</label>
+<label kind="synchronisation">runCycleMain_regionOfStatechartOftest?</label>
+<label kind="assignment">isScheduledmain_regionOfStatechartOftestOftest = true</label>
+</transition>
+
+<transition>
+<source ref="StateA"/>
+<target ref="StateB"/>
+<label kind="guard">(!(endOftest) &amp;&amp; isRaised_Command_S1Oftest)</label>
+<label kind="synchronisation">runCycleMain_regionOfStatechartOftest?</label>
+<label kind="assignment">isScheduledmain_regionOfStatechartOftestOftest = true</label>
+</transition>
+</template>
+
+<template>
+<name>
+SystemOrchestrator0
+</name>
+<location id="InitLoc">
+<name>
+InitLoc
+</name>
+<urgent/>
+</location>
+
+<location id="swapLocation1">
+<name>
+swapLocation1
+</name>
+<urgent/>
+</location>
+
+<location id="RunMain_regionOfStatechartOftest2">
+<name>
+RunMain_regionOfStatechartOftest2
+</name>
+<urgent/>
+</location>
+
+<location id="finalizing3test">
+<name>
+finalizing3test
+</name>
+<urgent/>
+</location>
+
+<location id="final">
+<name>
+final
+</name>
+<urgent/>
+</location>
+
+<location id="notIsStable">
+<name>
+notIsStable
+</name>
+<urgent/>
+</location>
+<init ref="notIsStable"/>
+
+<transition>
+<source ref="InitLoc"/>
+<target ref="swapLocation1"/>
+<label kind="assignment">clearOutEvents4(),
+isStable = false,
+isScheduledmain_regionOfStatechartOftestOftest = false,
+resetClocks5()</label>
+</transition>
+
+<transition>
+<source ref="swapLocation1"/>
+<target ref="RunMain_regionOfStatechartOftest2"/>
+<label kind="assignment">isRaised_Command_S2Oftest = toRaise_Command_S2Oftest,
+toRaise_Command_S2Oftest = false,
+isRaised_Command_S1Oftest = toRaise_Command_S1Oftest,
+toRaise_Command_S1Oftest = false</label>
+</transition>
+
+<transition>
+<source ref="RunMain_regionOfStatechartOftest2"/>
+<target ref="finalizing3test"/>
+<label kind="guard">!(isScheduledmain_regionOfStatechartOftestOftest)</label>
+<label kind="synchronisation">runCycleMain_regionOfStatechartOftest!</label>
+<label kind="assignment"></label>
+</transition>
+
+<transition>
+<source ref="RunMain_regionOfStatechartOftest2"/>
+<target ref="finalizing3test"/>
+<label kind="guard">isScheduledmain_regionOfStatechartOftestOftest</label>
+<label kind="assignment"></label>
+</transition>
+
+<transition>
+<source ref="finalizing3test"/>
+<target ref="final"/>
+<label kind="assignment">isRaised_Command_S2Oftest = false,
+isRaised_Command_S1Oftest = false</label>
+</transition>
+
+<transition>
+<source ref="final"/>
+<target ref="InitLoc"/>
+<label kind="assignment">isStable = true</label>
+</transition>
+
+<transition>
+<source ref="notIsStable"/>
+<target ref="InitLoc"/>
+<label kind="assignment">isStable = true</label>
+</transition>
+</template>
+
+<template>
+<name>
+Environment
+</name>
+<location id="InitLoc">
+<name>
+InitLoc
+</name>
+</location>
+<init ref="InitLoc"/>
+
+<transition>
+<source ref="InitLoc"/>
+<target ref="InitLoc"/>
+<label kind="guard">(isStable &amp;&amp; !(toRaise_Command_S2Oftest))</label>
+<label kind="assignment">toRaise_Command_S2Oftest = true</label>
+</transition>
+
+<transition>
+<source ref="InitLoc"/>
+<target ref="InitLoc"/>
+<label kind="guard">(isStable &amp;&amp; !(toRaise_Command_S1Oftest))</label>
+<label kind="assignment">toRaise_Command_S1Oftest = true</label>
+</transition>
+</template>
+<system>
+	P_main_regionOfStatechartOftest = main_regionOfStatechartOftest();
+	
+	P_SystemOrchestrator0 = SystemOrchestrator0();
+	
+	P_Environment = Environment();
+	system P_main_regionOfStatechartOftest, P_SystemOrchestrator0, P_Environment;
+</system>
+		</nta>

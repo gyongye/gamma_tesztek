@@ -1,0 +1,3 @@
+import "/testcase01/model/testt/system/Test01System.gcd"
+component Test01System
+E F [ { state Test01TS.MainRegion._2 } ]

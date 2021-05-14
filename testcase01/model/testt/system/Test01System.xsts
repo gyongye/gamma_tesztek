@@ -1,0 +1,52 @@
+type MainRegion_Test01TS : { __Inactive__, _0, _1, _2}
+type Main_region_Test01 : { __Inactive__, StateB, StateA, FinalState1}
+ctrl var mainRegion_Test01TS : MainRegion_Test01TS = __Inactive__
+var Command_S2_In_system_test : boolean = false
+var Command_S1_In_system_test : boolean = false
+ctrl var main_region_system_test : Main_region_Test01 = __Inactive__
+var end_system_test : boolean = false
+
+trans {
+	choice {
+		assume (((mainRegion_Test01TS == _1) && true));
+		Command_S2_In_system_test := true;
+		mainRegion_Test01TS := _2;
+	} or {
+		assume (((mainRegion_Test01TS == _0) && true));
+		Command_S1_In_system_test := true;
+		mainRegion_Test01TS := _1;
+	} or {
+		assume (!(((((mainRegion_Test01TS == _1) && true)) || (((mainRegion_Test01TS == _0) && true)))));
+	}
+	choice {
+		assume (((main_region_system_test == StateA) && ((Command_S1_In_system_test == true) && (!(end_system_test)))));
+		main_region_system_test := StateB;
+	} or {
+		assume (((main_region_system_test == StateB) && ((Command_S2_In_system_test == true) && (!(end_system_test)))));
+		main_region_system_test := FinalState1;
+		end_system_test := true;
+	} or {
+		assume (!(((((main_region_system_test == StateA) && ((Command_S1_In_system_test == true) && (!(end_system_test))))) || (((main_region_system_test == StateB) && ((Command_S2_In_system_test == true) && (!(end_system_test))))))));
+	}
+	Command_S1_In_system_test := false;
+	Command_S2_In_system_test := false;
+}
+init {
+	mainRegion_Test01TS := __Inactive__;
+	end_system_test := false;
+	main_region_system_test := __Inactive__;
+	Command_S2_In_system_test := false;
+	Command_S1_In_system_test := false;
+	mainRegion_Test01TS := _0;
+	main_region_system_test := StateA;
+	choice {
+		assume (main_region_system_test == StateB);
+	} or {
+		assume (main_region_system_test == StateA);
+	} or {
+		assume (main_region_system_test == FinalState1);
+		end_system_test := true;
+	}
+}
+env {
+}

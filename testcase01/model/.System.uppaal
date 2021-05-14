@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="ASCII"?>
+<uppaal:NTA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:declarations="http://www.uni-paderborn.de/uppaal/declarations/0.4.0" xmlns:expressions="http://www.uni-paderborn.de/uppaal/expressions/0.4.0" xmlns:types="http://www.uni-paderborn.de/uppaal/types/0.4.0" xmlns:uppaal="http://www.uni-paderborn.de/uppaal/0.4.0" xsi:schemaLocation="http://www.uni-paderborn.de/uppaal/declarations/0.4.0 http://www.uni-paderborn.de/uppaal/0.4.0#//declarations http://www.uni-paderborn.de/uppaal/expressions/0.4.0 http://www.uni-paderborn.de/uppaal/0.4.0#//expressions http://www.uni-paderborn.de/uppaal/types/0.4.0 http://www.uni-paderborn.de/uppaal/0.4.0#//types" name="System">
+  <int name="integer"/>
+  <bool name="boolean" type="bool"/>
+  <clock name="clock" type="clock"/>
+  <chan name="channel" type="chan"/>
+  <void name="void" type="void"/>
+  <globalDeclarations>
+    <declaration xsi:type="declarations:DataVariableDeclaration">
+      <typeDefinition xsi:type="types:TypeReference" referredType="#//@bool"/>
+      <variable name="isStable">
+        <initializer xsi:type="declarations:ExpressionInitializer">
+          <expression xsi:type="expressions:LiteralExpression" text="false"/>
+        </initializer>
+      </variable>
+    </declaration>
+    <declaration xsi:type="declarations:DataVariableDeclaration">
+      <typeDefinition xsi:type="types:TypeReference" referredType="#//@bool"/>
+      <variable name="endOftest"/>
+    </declaration>
+    <declaration xsi:type="declarations:DataVariableDeclaration">
+      <typeDefinition xsi:type="types:TypeReference" referredType="#//@bool"/>
+      <variable name="toRaise_Command_S2Oftest"/>
+    </declaration>
+    <declaration xsi:type="declarations:DataVariableDeclaration">
+      <typeDefinition xsi:type="types:TypeReference" referredType="#//@bool"/>
+      <variable name="isRaised_Command_S2Oftest"/>
+    </declaration>
+    <declaration xsi:type="declarations:DataVariableDeclaration">
+      <typeDefinition xsi:type="types:TypeReference" referredType="#//@bool"/>
+      <variable name="toRaise_Command_S1Oftest"/>
+    </declaration>
+    <declaration xsi:type="declarations:DataVariableDeclaration">
+      <typeDefinition xsi:type="types:TypeReference" referredType="#//@bool"/>
+      <variable name="isRaised_Command_S1Oftest"/>
+    </declaration>
+    <declaration xsi:type="declarations:ChannelVariableDeclaration" broadcast="true">
+      <typeDefinition xsi:type="types:TypeReference" referredType="#//@chan"/>
+      <variable name="runCycleMain_regionOfStatechartOftest"/>
+    </declaration>
+    <declaration xsi:type="declarations:DataVariableDeclaration">
+      <typeDefinition xsi:type="types:TypeReference" referredType="#//@bool"/>
+      <variable name="isScheduledmain_regionOfStatechartOftestOftest"/>
+    </declaration>
+    <declaration xsi:type="declarations:FunctionDeclaration">
+      <function name="clearOutEvents4">
+        <returnType xsi:type="types:TypeReference" referredType="#//@void"/>
+        <block/>
+      </function>
+    </declaration>
+    <declaration xsi:type="declarations:FunctionDeclaration">
+      <function name="resetClocks5">
+        <returnType xsi:type="types:TypeReference" referredType="#//@void"/>
+        <block/>
+      </function>
+    </declaration>
+  </globalDeclarations>
+  <template name="main_regionOfStatechartOftest" init="#//@template.0/@location.0">
+    <declarations/>
+    <location name="Entry0" locationTimeKind="COMMITED"/>
+    <location name="FinalState1"/>
+    <location name="entryOfFinalState1" locationTimeKind="COMMITED"/>
+    <location name="StateB"/>
+    <location name="StateA"/>
+    <edge source="#//@template.0/@location.2" target="#//@template.0/@location.1">
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.1/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="true"/>
+      </update>
+    </edge>
+    <edge source="#//@template.0/@location.0" target="#//@template.0/@location.4">
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.7/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="true"/>
+      </update>
+    </edge>
+    <edge source="#//@template.0/@location.3" target="#//@template.0/@location.2">
+      <guard xsi:type="expressions:LogicalExpression">
+        <firstExpr xsi:type="expressions:NegationExpression">
+          <negatedExpression xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.1/@variable.0"/>
+        </firstExpr>
+        <secondExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.3/@variable.0"/>
+      </guard>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.7/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="true"/>
+      </update>
+      <synchronization>
+        <channelExpression identifier="#//@globalDeclarations/@declaration.6/@variable.0"/>
+      </synchronization>
+    </edge>
+    <edge source="#//@template.0/@location.4" target="#//@template.0/@location.3">
+      <guard xsi:type="expressions:LogicalExpression">
+        <firstExpr xsi:type="expressions:NegationExpression">
+          <negatedExpression xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.1/@variable.0"/>
+        </firstExpr>
+        <secondExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.5/@variable.0"/>
+      </guard>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.7/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="true"/>
+      </update>
+      <synchronization>
+        <channelExpression identifier="#//@globalDeclarations/@declaration.6/@variable.0"/>
+      </synchronization>
+    </edge>
+  </template>
+  <template name="SystemOrchestrator0" init="#//@template.1/@location.5">
+    <declarations/>
+    <location name="InitLoc" locationTimeKind="URGENT"/>
+    <location name="swapLocation1" locationTimeKind="URGENT"/>
+    <location name="RunMain_regionOfStatechartOftest2" locationTimeKind="URGENT"/>
+    <location name="finalizing3test" locationTimeKind="URGENT"/>
+    <location name="final" locationTimeKind="URGENT"/>
+    <location name="notIsStable" locationTimeKind="URGENT"/>
+    <edge source="#//@template.1/@location.0" target="#//@template.1/@location.1">
+      <update xsi:type="expressions:FunctionCallExpression" function="#//@globalDeclarations/@declaration.8/@function"/>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.0/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="false"/>
+      </update>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.7/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="false"/>
+      </update>
+      <update xsi:type="expressions:FunctionCallExpression" function="#//@globalDeclarations/@declaration.9/@function"/>
+    </edge>
+    <edge source="#//@template.1/@location.1" target="#//@template.1/@location.2">
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.3/@variable.0"/>
+        <secondExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.2/@variable.0"/>
+      </update>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.2/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="false"/>
+      </update>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.5/@variable.0"/>
+        <secondExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.4/@variable.0"/>
+      </update>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.4/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="false"/>
+      </update>
+    </edge>
+    <edge source="#//@template.1/@location.2" target="#//@template.1/@location.3">
+      <guard xsi:type="expressions:NegationExpression">
+        <negatedExpression xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.7/@variable.0"/>
+      </guard>
+      <synchronization kind="!">
+        <channelExpression identifier="#//@globalDeclarations/@declaration.6/@variable.0"/>
+      </synchronization>
+    </edge>
+    <edge source="#//@template.1/@location.2" target="#//@template.1/@location.3">
+      <guard xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.7/@variable.0"/>
+    </edge>
+    <edge source="#//@template.1/@location.3" target="#//@template.1/@location.4">
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.3/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="false"/>
+      </update>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.5/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="false"/>
+      </update>
+    </edge>
+    <edge source="#//@template.1/@location.4" target="#//@template.1/@location.0">
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.0/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="true"/>
+      </update>
+    </edge>
+    <edge source="#//@template.1/@location.5" target="#//@template.1/@location.0">
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.0/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="true"/>
+      </update>
+    </edge>
+  </template>
+  <template name="Environment" init="#//@template.2/@location.0">
+    <declarations/>
+    <location name="InitLoc"/>
+    <edge source="#//@template.2/@location.0" target="#//@template.2/@location.0">
+      <guard xsi:type="expressions:LogicalExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.0/@variable.0"/>
+        <secondExpr xsi:type="expressions:NegationExpression">
+          <negatedExpression xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.2/@variable.0"/>
+        </secondExpr>
+      </guard>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.2/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="true"/>
+      </update>
+    </edge>
+    <edge source="#//@template.2/@location.0" target="#//@template.2/@location.0">
+      <guard xsi:type="expressions:LogicalExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.0/@variable.0"/>
+        <secondExpr xsi:type="expressions:NegationExpression">
+          <negatedExpression xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.4/@variable.0"/>
+        </secondExpr>
+      </guard>
+      <update xsi:type="expressions:AssignmentExpression">
+        <firstExpr xsi:type="expressions:IdentifierExpression" identifier="#//@globalDeclarations/@declaration.4/@variable.0"/>
+        <secondExpr xsi:type="expressions:LiteralExpression" text="true"/>
+      </update>
+    </edge>
+  </template>
+  <systemDeclarations>
+    <system>
+      <instantiationList template="#//@template.0 #//@template.1 #//@template.2"/>
+    </system>
+  </systemDeclarations>
+</uppaal:NTA>

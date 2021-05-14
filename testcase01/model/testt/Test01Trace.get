@@ -1,0 +1,32 @@
+import "model/System.gcd"
+
+trace Test01 of System
+step {
+	act {
+		reset
+	}
+	assert {
+		test.StateA
+		test.end = false
+	}
+}
+step {
+	act {
+		raise command.S1
+		schedule component
+	}
+	assert {
+		test.StateB
+		test.end = false
+	}
+}
+step {
+	act {
+		raise command.S2
+		schedule component
+	}
+	assert {
+		test.FinalState1
+		test.end = true
+	}
+}

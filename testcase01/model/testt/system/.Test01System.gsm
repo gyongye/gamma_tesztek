@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hu.bme.mit.gamma.statechart.interface:Package xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:hu.bme.mit.gamma.action="http://www.mit.bme.hu/gamma/action/Model" xmlns:hu.bme.mit.gamma.expression="http://www.mit.bme.hu/gamma/expression/Model" xmlns:hu.bme.mit.gamma.statechart="http://www.mit.bme.hu/gamma/statechart/Model/Statechart" xmlns:hu.bme.mit.gamma.statechart.composite="http://www.mit.bme.hu/gamma/statechart/Model/Composite" xmlns:hu.bme.mit.gamma.statechart.interface="http://www.mit.bme.hu/gamma/statechart/Model/Interface" name="testcase1View">
+  <components xsi:type="hu.bme.mit.gamma.statechart.composite:CascadeCompositeComponent" name="Test01System">
+    <channels xsi:type="hu.bme.mit.gamma.statechart.composite:SimpleChannel">
+      <providedPort instance="//@components.0/@components.0" port="//@components.1/@ports.0"/>
+      <requiredPort instance="//@components.0/@components.1" port="//@components.2/@ports.0"/>
+    </channels>
+    <components name="Test01TS" type="//@components.1"/>
+    <components name="system" type="//@components.2"/>
+  </components>
+  <components xsi:type="hu.bme.mit.gamma.statechart:StatechartDefinition" name="Test01TS">
+    <ports name="command">
+      <interfaceRealization>
+        <interface href="/testcase01/model/Interfaces.gcd#//@interfaces.0"/>
+      </interfaceRealization>
+    </ports>
+    <regions name="MainRegion">
+      <stateNodes xsi:type="hu.bme.mit.gamma.statechart:InitialState" name="Initial"/>
+      <stateNodes xsi:type="hu.bme.mit.gamma.statechart:State" name="_0"/>
+      <stateNodes xsi:type="hu.bme.mit.gamma.statechart:State" name="_1"/>
+      <stateNodes xsi:type="hu.bme.mit.gamma.statechart:State" name="_2"/>
+    </regions>
+    <transitions sourceState="//@components.1/@regions.0/@stateNodes.0" targetState="//@components.1/@regions.0/@stateNodes.1"/>
+    <transitions sourceState="//@components.1/@regions.0/@stateNodes.1" targetState="//@components.1/@regions.0/@stateNodes.2">
+      <trigger xsi:type="hu.bme.mit.gamma.statechart:OnCycleTrigger"/>
+      <effects xsi:type="hu.bme.mit.gamma.statechart:RaiseEventAction" port="//@components.1/@ports.0">
+        <event href="/testcase01/model/Interfaces.gcd#//@interfaces.0/@events.1/@event"/>
+      </effects>
+    </transitions>
+    <transitions sourceState="//@components.1/@regions.0/@stateNodes.2" targetState="//@components.1/@regions.0/@stateNodes.3">
+      <trigger xsi:type="hu.bme.mit.gamma.statechart:OnCycleTrigger"/>
+      <effects xsi:type="hu.bme.mit.gamma.statechart:RaiseEventAction" port="//@components.1/@ports.0">
+        <event href="/testcase01/model/Interfaces.gcd#//@interfaces.0/@events.0/@event"/>
+      </effects>
+    </transitions>
+  </components>
+  <components xsi:type="hu.bme.mit.gamma.statechart.composite:SynchronousCompositeComponent" name="System">
+    <ports name="command">
+      <interfaceRealization realizationMode="REQUIRED">
+        <interface href="/testcase01/model/Interfaces.gcd#//@interfaces.0"/>
+      </interfaceRealization>
+    </ports>
+    <portBindings compositeSystemPort="//@components.2/@ports.0">
+      <instancePortReference instance="//@components.2/@components.0" port="//@components.3/@ports.0"/>
+    </portBindings>
+    <components name="system_test" type="//@components.3"/>
+  </components>
+  <components xsi:type="hu.bme.mit.gamma.statechart:StatechartDefinition" name="Test01" transitionPriority="ORDER_BASED">
+    <ports name="Command">
+      <interfaceRealization realizationMode="REQUIRED">
+        <interface href="/testcase01/model/Interfaces.gcd#//@interfaces.0"/>
+      </interfaceRealization>
+    </ports>
+    <regions name="main_region">
+      <stateNodes xsi:type="hu.bme.mit.gamma.statechart:InitialState" name="Entry0"/>
+      <stateNodes xsi:type="hu.bme.mit.gamma.statechart:State" name="StateB"/>
+      <stateNodes xsi:type="hu.bme.mit.gamma.statechart:State" name="StateA"/>
+      <stateNodes xsi:type="hu.bme.mit.gamma.statechart:State" name="FinalState1">
+        <entryActions xsi:type="hu.bme.mit.gamma.action:AssignmentStatement">
+          <lhs xsi:type="hu.bme.mit.gamma.expression:DirectReferenceExpression" declaration="//@components.3/@variableDeclarations.0"/>
+          <rhs xsi:type="hu.bme.mit.gamma.expression:TrueExpression"/>
+        </entryActions>
+      </stateNodes>
+    </regions>
+    <variableDeclarations name="end">
+      <type xsi:type="hu.bme.mit.gamma.expression:BooleanTypeDefinition"/>
+    </variableDeclarations>
+    <transitions sourceState="//@components.3/@regions.0/@stateNodes.0" targetState="//@components.3/@regions.0/@stateNodes.2"/>
+    <transitions sourceState="//@components.3/@regions.0/@stateNodes.2" targetState="//@components.3/@regions.0/@stateNodes.1">
+      <trigger xsi:type="hu.bme.mit.gamma.statechart.interface:EventTrigger">
+        <eventReference xsi:type="hu.bme.mit.gamma.statechart:PortEventReference" port="//@components.3/@ports.0">
+          <event href="/testcase01/model/Interfaces.gcd#//@interfaces.0/@events.1/@event"/>
+        </eventReference>
+      </trigger>
+      <guard xsi:type="hu.bme.mit.gamma.expression:NotExpression">
+        <operand xsi:type="hu.bme.mit.gamma.expression:DirectReferenceExpression" declaration="//@components.3/@variableDeclarations.0"/>
+      </guard>
+    </transitions>
+    <transitions sourceState="//@components.3/@regions.0/@stateNodes.1" targetState="//@components.3/@regions.0/@stateNodes.3">
+      <trigger xsi:type="hu.bme.mit.gamma.statechart.interface:EventTrigger">
+        <eventReference xsi:type="hu.bme.mit.gamma.statechart:PortEventReference" port="//@components.3/@ports.0">
+          <event href="/testcase01/model/Interfaces.gcd#//@interfaces.0/@events.0/@event"/>
+        </eventReference>
+      </trigger>
+      <guard xsi:type="hu.bme.mit.gamma.expression:NotExpression">
+        <operand xsi:type="hu.bme.mit.gamma.expression:DirectReferenceExpression" declaration="//@components.3/@variableDeclarations.0"/>
+      </guard>
+    </transitions>
+  </components>
+  <annotations xsi:type="hu.bme.mit.gamma.statechart.interface:UnfoldedPackageAnnotation"/>
+  <annotations xsi:type="hu.bme.mit.gamma.statechart.interface:SchedulingConstraintAnnotation">
+    <schedulingConstraint xsi:type="hu.bme.mit.gamma.expression:IntegerLiteralExpression" value="1"/>
+  </annotations>
+</hu.bme.mit.gamma.statechart.interface:Package>

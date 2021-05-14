@@ -1,0 +1,10 @@
+import "Interfaces"
+import external "Test01.sct"
+
+statechart {
+	statechart : Test01 
+		mappings {
+			map Command = Command as required
+		
+	}
+}

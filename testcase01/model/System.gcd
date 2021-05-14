@@ -1,0 +1,22 @@
+package testcase1
+
+import "Interfaces"
+import "Test01"
+
+sync System [
+	// Component ports
+	//port police : requires PoliceInterrupt
+	port command : requires Command
+] {
+	// Components of the composite model
+	//component controller : Controller
+	component test : Test01
+	
+	// Binding system ports to the ports of the components	
+	//bind police -> controller.PoliceInterrupt
+	bind command -> test.Command
+	
+	
+	// Connecting ports of components using channels
+	//channel [controller.PriorityControl] -o)- [prior.Control]	
+}

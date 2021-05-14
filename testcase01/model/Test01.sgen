@@ -1,0 +1,16 @@
+GeneratorModel for yakindu::java {
+
+	statechart Test01 {
+
+		feature Outlet {
+			targetProject = "testcase1"
+			targetFolder = "src-gen"
+		}
+		
+		feature GeneralFeatures {
+			RuntimeService = true
+			TimerService = true
+			InterfaceObserverSupport = true
+		}
+	}
+}

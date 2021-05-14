@@ -1,0 +1,8 @@
+package testcase1
+import "/testcase01/model/testt/system/Test01TS.gcd"
+import "/testcase01/model/System.gcd"
+cascade Test01System {
+	component Test01TS : Test01TS
+	component system : System
+	channel [ Test01TS.command ] -o)- [ system.command ]
+}

@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="ASCII"?>
+<hu.bme.mit.gamma.uppaal.transformation:G2UTrace xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:declarations="http://www.uni-paderborn.de/uppaal/declarations/0.4.0" xmlns:hu.bme.mit.gamma.statechart.composite="http://www.mit.bme.hu/gamma/statechart/Model/Composite" xmlns:hu.bme.mit.gamma.uppaal.transformation="http://www.mit.bme.hu/gamma/uppaal/transformation/Traceability">
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@variableDeclarations.0"/>
+    <to href=".Test01System.uppaal#//@globalDeclarations/@declaration.1"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:InstanceTrace">
+    <owner xsi:type="hu.bme.mit.gamma.statechart.composite:SynchronousComponentInstance" href=".Test01System.gsm#//@components.2/@components.0"/>
+    <element href=".Test01System.uppaal#//@globalDeclarations/@declaration.1"/>
+    <element href=".Test01System.uppaal#//@globalDeclarations/@declaration.2"/>
+    <element href=".Test01System.uppaal#//@globalDeclarations/@declaration.3"/>
+    <element href=".Test01System.uppaal#//@globalDeclarations/@declaration.4"/>
+    <element href=".Test01System.uppaal#//@globalDeclarations/@declaration.5"/>
+    <element href=".Test01System.uppaal#//@globalDeclarations/@declaration.6"/>
+    <element href=".Test01System.uppaal#//@globalDeclarations/@declaration.7"/>
+    <element href=".Test01System.uppaal#//@template.0"/>
+    <element href=".Test01System.uppaal#//@template.0/@location.0"/>
+    <element href=".Test01System.uppaal#//@template.0/@location.1"/>
+    <element href=".Test01System.uppaal#//@template.0/@edge.0"/>
+    <element href=".Test01System.uppaal#//@template.0/@location.2"/>
+    <element href=".Test01System.uppaal#//@template.0/@location.3"/>
+    <element href=".Test01System.uppaal#//@template.0/@location.4"/>
+    <element href=".Test01System.uppaal#//@template.0/@edge.1"/>
+    <element href=".Test01System.uppaal#//@template.0/@edge.2"/>
+    <element href=".Test01System.uppaal#//@template.0/@edge.3"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href="/testcase01/model/Interfaces.gcd#//@interfaces.0/@events.1/@event"/>
+    <to href=".Test01System.uppaal#//@globalDeclarations/@declaration.2"/>
+    <to href=".Test01System.uppaal#//@globalDeclarations/@declaration.3"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:PortTrace">
+    <port href=".Test01System.gsm#//@components.3/@ports.0"/>
+    <declarations xsi:type="declarations:DataVariableDeclaration" href=".Test01System.uppaal#//@globalDeclarations/@declaration.2"/>
+    <declarations xsi:type="declarations:DataVariableDeclaration" href=".Test01System.uppaal#//@globalDeclarations/@declaration.3"/>
+    <declarations xsi:type="declarations:DataVariableDeclaration" href=".Test01System.uppaal#//@globalDeclarations/@declaration.4"/>
+    <declarations xsi:type="declarations:DataVariableDeclaration" href=".Test01System.uppaal#//@globalDeclarations/@declaration.5"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href="/testcase01/model/Interfaces.gcd#//@interfaces.0/@events.0/@event"/>
+    <to href=".Test01System.uppaal#//@globalDeclarations/@declaration.4"/>
+    <to href=".Test01System.uppaal#//@globalDeclarations/@declaration.5"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.uppaal#//@template.0"/>
+    <to href=".Test01System.uppaal#//@globalDeclarations/@declaration.6"/>
+    <to href=".Test01System.uppaal#//@globalDeclarations/@declaration.7"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@regions.0"/>
+    <to href=".Test01System.uppaal#//@template.0"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.uppaal#//@template.1"/>
+    <to href=".Test01System.uppaal#//@globalDeclarations/@declaration.8"/>
+    <to href=".Test01System.uppaal#//@globalDeclarations/@declaration.9"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:InstanceTrace">
+    <owner xsi:type="hu.bme.mit.gamma.statechart.composite:SynchronousComponentInstance" href=".Test01System.gsm#//@components.0/@components.0"/>
+    <element href=".Test01System.uppaal#//@globalDeclarations/@declaration.8"/>
+    <element href=".Test01System.uppaal#//@globalDeclarations/@declaration.9"/>
+    <element href=".Test01System.uppaal#//@template.1"/>
+    <element href=".Test01System.uppaal#//@template.1/@location.0"/>
+    <element href=".Test01System.uppaal#//@template.1/@location.1"/>
+    <element href=".Test01System.uppaal#//@template.1/@location.2"/>
+    <element href=".Test01System.uppaal#//@template.1/@location.3"/>
+    <element href=".Test01System.uppaal#//@template.1/@edge.0"/>
+    <element href=".Test01System.uppaal#//@template.1/@edge.1"/>
+    <element href=".Test01System.uppaal#//@template.1/@edge.2"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@regions.0"/>
+    <to href=".Test01System.uppaal#//@template.1"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@regions.0/@stateNodes.0"/>
+    <to href=".Test01System.uppaal#//@template.1/@location.0"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@regions.0/@stateNodes.0"/>
+    <to href=".Test01System.uppaal#//@template.0/@location.0"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@regions.0/@stateNodes.3"/>
+    <to href=".Test01System.uppaal#//@template.1/@location.1"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@regions.0/@stateNodes.3"/>
+    <to href=".Test01System.uppaal#//@template.0/@location.1"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.0"/>
+    <to href=".Test01System.uppaal#//@template.0/@location.2"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@regions.0/@stateNodes.1"/>
+    <to href=".Test01System.uppaal#//@template.0/@location.3"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@regions.0/@stateNodes.2"/>
+    <to href=".Test01System.uppaal#//@template.0/@location.4"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@regions.0/@stateNodes.1"/>
+    <to href=".Test01System.uppaal#//@template.1/@location.2"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@regions.0/@stateNodes.2"/>
+    <to href=".Test01System.uppaal#//@template.1/@location.3"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@transitions.2"/>
+    <to href=".Test01System.uppaal#//@template.1/@edge.0"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@transitions.2"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.1"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@transitions.0"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.2"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@transitions.0"/>
+    <to href=".Test01System.uppaal#//@template.1/@edge.1"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@transitions.1"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.3"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@transitions.1"/>
+    <to href=".Test01System.uppaal#//@template.1/@edge.2"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@transitions.1/@trigger"/>
+    <to href=".Test01System.uppaal#//@template.1/@edge.2/@guard"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.1/@transitions.2/@trigger"/>
+    <to href=".Test01System.uppaal#//@template.1/@edge.0/@guard"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@transitions.2/@trigger"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.1/@guard/@secondExpr"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:Trace">
+    <from href=".Test01System.gsm#//@components.3/@transitions.1/@trigger"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.3/@guard/@secondExpr"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:ExpressionTrace">
+    <from href=".Test01System.gsm#//@components.3/@transitions.1/@guard/@operand"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.3/@guard/@firstExpr/@negatedExpression"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:ExpressionTrace">
+    <from href=".Test01System.gsm#//@components.3/@transitions.1/@guard"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.3/@guard/@firstExpr"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:ExpressionTrace">
+    <from href=".Test01System.gsm#//@components.3/@transitions.2/@guard/@operand"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.1/@guard/@firstExpr/@negatedExpression"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:ExpressionTrace">
+    <from href=".Test01System.gsm#//@components.3/@transitions.2/@guard"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.1/@guard/@firstExpr"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:ExpressionTrace">
+    <from href=".Test01System.gsm#//@components.3/@regions.0/@stateNodes.3/@entryActions.0/@lhs"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.0/@update.0/@firstExpr"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:ExpressionTrace">
+    <from href=".Test01System.gsm#//@components.3/@regions.0/@stateNodes.3/@entryActions.0/@rhs"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.0/@update.0/@secondExpr"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:ExpressionTrace">
+    <from href=".Test01System.gsm#//@components.3/@regions.0/@stateNodes.3/@entryActions.0"/>
+    <to href=".Test01System.uppaal#//@template.0/@edge.0/@update.0"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:ExpressionTrace">
+    <from href=".Test01System.gsm#//@components.1/@transitions.1/@effects.0"/>
+    <to href=".Test01System.uppaal#//@template.1/@edge.2/@update.1"/>
+  </traces>
+  <traces xsi:type="hu.bme.mit.gamma.uppaal.transformation:ExpressionTrace">
+    <from href=".Test01System.gsm#//@components.1/@transitions.2/@effects.0"/>
+    <to href=".Test01System.uppaal#//@template.1/@edge.0/@update.1"/>
+  </traces>
+  <gammaPackage href=".Test01System.gsm#/"/>
+  <nta href=".Test01System.uppaal#/"/>
+</hu.bme.mit.gamma.uppaal.transformation:G2UTrace>

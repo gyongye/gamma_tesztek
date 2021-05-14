@@ -1,0 +1,15 @@
+package test01TS
+import "/testcase01/model/Interfaces.gcd"
+statechart Test01TS [
+	port command : provides Command
+] {
+	transition from Initial to _0
+	transition from _0 to _1 when cycle / raise command.S1;
+	transition from _1 to _2 when cycle / raise command.S2;
+	region MainRegion {
+		initial Initial
+		state _0
+		state _1
+		state _2
+	}
+}
